@@ -1,1 +1,1 @@
-web: python3 exceldb.py
+web: python3 exceldb:app
