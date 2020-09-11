@@ -1,1 +1,2 @@
-web: python3 exceldb:app
+web: python3 app:app
+
