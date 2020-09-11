@@ -13,8 +13,8 @@ from flask import Flask, request
 def browserLoad(link):
     options = Options()
     options.add_argument("--headless")
-    options.binary_location = r'C:\Program Files (x86)\BraveSoftware\Brave-Browser\Application\Brave.exe'
-    drvr = webdriver.Chrome(options = options,executable_path= r"C:\Program Files (x86)\BraveSoftware\Brave-Browser\Application\chromedriver.exe")
+    options.binary_location = r'C/app/.apt/usr/bin/google-chrome'
+    drvr = webdriver.Chrome(options = options,executable_path= os.environ.get("GOOGLE_CHROME_BIN"))
     drvr.get(link)
     return drvr
 
