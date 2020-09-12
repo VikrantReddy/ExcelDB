@@ -13,8 +13,10 @@ from flask import Flask, request
 def browserLoad(link):
     options = Options()
     options.add_argument("--headless")
-    options.binary_location = r'C/app/.apt/usr/bin/google-chrome'
-    drvr = webdriver.Chrome(options = options,executable_path= os.environ.get("GOOGLE_CHROME_BIN"))
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.binary_location = os.environ.get(GOOGLE_CHROME_BIN)
+    drvr = webdriver.Chrome(options = options,executable_path= os.environ.get(CHROMEDRIVER_PATH))
     drvr.get(link)
     return drvr
 
