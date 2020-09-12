@@ -16,8 +16,8 @@ def browserLoad(link):
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
-    options.binary_location = GOOGLE_CHROME_BIN
-    drvr = webdriver.Chrome(options = options,executable_path= CHROMEDRIVER_PATH)
+    options.binary_location = os.eviron["GOOGLE_CHROME_BIN"]
+    drvr = webdriver.Chrome(options = options,executable_path= os.environ["CHROMEDRIVER_PATH"])
     drvr.get(link)
     return drvr
 
